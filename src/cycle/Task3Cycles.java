@@ -1,4 +1,4 @@
-package cycles;
+package cycle;
 
 /**
  * Задание 3
