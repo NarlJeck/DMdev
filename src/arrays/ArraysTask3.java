@@ -17,7 +17,7 @@ package arrays;
  * [1, 9, 3]
  */
 public class ArraysTask3 {
-    private static int[] array = {0, 4, 5, 6, -7, 9,- 0, 2, -5, 6, -5, -7, -7, 8, 6, -4, -5, 0, 0, 0,};
+    private static int[] array = {0, 4, 5, 6, -7, 9, -0, 2, -5, -9, 6, -5, -7, -7, 8, 6, -4, -5, -2, 0, 0, 0,};
 
     public static void main(String[] args) {
         int sizeNegativeArray = countNegativeNumber(array);
@@ -37,31 +37,24 @@ public class ArraysTask3 {
         int[][] twoDimensionArray = new int[3][maxLine];
 
         twoDimensionArray[0] = new int[positiveArray.length];
-        for (int i = 0; i < 1; i++) {
-            for (int j = 0; j < twoDimensionArray[0].length; j++) {
-                twoDimensionArray[i][j] = positiveArray[j];
-                System.out.print(twoDimensionArray[i][j] + " ");
-            }
-
+        for (int i = 0; i < positiveArray.length; i++) {
+            twoDimensionArray[0][i] = positiveArray[i];
+            System.out.print(twoDimensionArray[0][i] + " ");
         }
         System.out.println();
         twoDimensionArray[1] = new int[negativeArray.length];
-        for (int i = 0; i < 1; i++) {
-            for (int j = 0; j < twoDimensionArray[1].length; j++) {
-                twoDimensionArray[i][j] = negativeArray[j];
-                System.out.print(twoDimensionArray[i][j] + " ");
-            }
-
+        for (int i = 0; i < negativeArray.length; i++) {
+            twoDimensionArray[1][i] = negativeArray[i];
+            System.out.print(twoDimensionArray[1][i] + " ");
         }
+
         System.out.println();
 
         twoDimensionArray[2] = new int[nullArray.length];
-        for (int i = 0; i < 1; i++) {
-            for (int j = 0; j < twoDimensionArray[2].length; j++) {
-                twoDimensionArray[i][j] = nullArray[j];
+            for (int i = 0; i < nullArray.length; i++) {
+                twoDimensionArray[2][i] = nullArray[i];
 
-                System.out.print(twoDimensionArray[i][j] + " ");
-            }
+                System.out.print(twoDimensionArray[2][i] + " ");
         }
 
     }
