@@ -10,7 +10,7 @@ package arrays;
  * Не забывать, что всю логику приложения нужно выносить в отдельные функции. main - только для тестирования написанного функционала.
  */
 public class ArraysTask1 {
-    private static int[] array = {0, -4, 0, -5, 3, 1, -5, -9, 0, 5, 0, -8};
+    private static final int[] array = {0, -4, 0, -5, 3, 1, -5, -9, 0, 5, 0, -8};
 
     public static void main(String[] args) {
         int quantityNegativeNumbers = calculatingNegativeNumbers(array);
