@@ -10,7 +10,8 @@ package cycle;
 public class Task1Cycles {
     public static void main(String[] args) {
 
-        sortingNumberEvenOrOdd(23254);
+        sortingNumberEvenOrOdd(22455241);
+        System.out.println();
 
     }
 
@@ -23,13 +24,14 @@ public class Task1Cycles {
     private static void findEvenNumbers(int value) {
         int sum = 0;
         int currentValue = value;
-        while (currentValue != 0) {
+//
+        for (int i = 0; i < currentValue; i++) {
             int number = currentValue % 10;
-            if (number % 2 == 0 || number == 0) {
+            if (number % 2 == 0) {
                 System.out.print(number + "; ");
                 sum += 1;
-                currentValue /= 10;
-            } else currentValue /= 10;
+            }
+            currentValue /= 10;
         }
         System.out.println(" - even numbers " + sum);
     }
@@ -37,14 +39,14 @@ public class Task1Cycles {
     private static void findOddNumbers(int value) {
         int sum = 0;
         int currentValue = value;
-        while (currentValue != 0) {
+        for (int i = 0; i < currentValue; i++) {
             int number = currentValue % 10;
             if (number % 2 != 0) {
                 System.out.print(number + "; ");
                 sum += 1;
-                currentValue /= 10;
 
-            } else currentValue /= 10;
+            }
+            currentValue /= 10;
         }
         System.out.println(" - odd numbers " + sum);
     }

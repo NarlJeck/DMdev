@@ -14,15 +14,17 @@ public class Task2Cycles {
     public static void main(String[] args) {
         valueReversal(84155745);
     }
+
     private static int getMaxPower(int value) {
         int maxPower = 0;
         int currentValue = value;
-        while (currentValue != 0) {
+        for (int i = 0; i < currentValue; i++) {
             maxPower += 1;
             currentValue /= 10;
         }
         return maxPower;
     }
+
     public static int exponentiation(int number, int power) {
         return (int) (number * Math.pow(10, power));
     }
@@ -32,7 +34,7 @@ public class Task2Cycles {
         int maxPower = getMaxPower(value);
         int sum = 0;
         int currentValue = value;
-        while (currentValue != 0) {
+        for (int i = 0; i < currentValue; i++) {
             int number = currentValue % 10;
             currentValue /= 10;
             maxPower -= 1;
