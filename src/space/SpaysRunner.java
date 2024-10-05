@@ -1,7 +1,8 @@
 package space;
 
 import space.planet.Planet;
-import space.satellite.Satellite;
+import space.star.satellite.Satellite;
+import space.star.Star;
 
 /**
  * Задание 1
@@ -66,6 +67,16 @@ public class SpaysRunner {
                 122.2,50,600000000.8,855.3,0,45.2,
                 false);
         moon.definitionGravitationalConnection(moon,jupiter);
+
+        Star sun = new Star("He,Ge",55,"Sun",40000,1212.0,47711.0,
+                20000,0.0,"Red star",0.0);
+        double radiusSun = (sun.calculatesDiameter(sun))/2;
+        Double luminositySun = sun.luminosityDetermination(radiusSun,sun.getTemperature());
+        sun.setLuminosity(luminositySun);
+        sun.massDetermination(sun.getLuminosity(),radiusSun);
+
+
+
 
 
     }

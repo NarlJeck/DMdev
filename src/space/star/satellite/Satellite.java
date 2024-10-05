@@ -1,4 +1,4 @@
-package space.satellite;
+package space.star.satellite;
 
 import space.planet.Planet;
 
