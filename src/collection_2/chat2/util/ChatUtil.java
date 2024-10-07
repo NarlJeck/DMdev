@@ -20,8 +20,8 @@ public final class ChatUtil {
 
     public static Set<User> usersOverEighteen(Set<Chat> chatList) {
         Set<User> userListOverEight = new HashSet<>();
-        Iterator<Chat> listIteratorChat = chatList.iterator();
-        while (listIteratorChat.hasNext()) {
+
+        for (Iterator<Chat> listIteratorChat = chatList.iterator(); listIteratorChat.hasNext(); ) {
             Chat nextValue = listIteratorChat.next();
             Set<User> usersList = nextValue.getUsersList();
             for (User user : usersList) {
@@ -38,8 +38,7 @@ public final class ChatUtil {
     public static int userAVGAgeUnderEighteen(Set<Chat> chatList) {
         int sumAge = 0;
         int countUser = 0;
-        Iterator<Chat> listIteratorChat = chatList.iterator();
-        while (listIteratorChat.hasNext()) {
+        for (Iterator<Chat> listIteratorChat = chatList.iterator(); listIteratorChat.hasNext(); ) {
             Chat nextValue = listIteratorChat.next();
             Set<User> usersList = nextValue.getUsersList();
             for (User user : usersList) {
