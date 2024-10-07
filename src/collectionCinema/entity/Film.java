@@ -8,10 +8,10 @@ public class Film implements Comparable<Film>{
     private Integer id;
     private Integer yearPublication;
     private Integer monthPublication;
-    private String genre;
+    private Genre genre;
     private Double rating;
 
-    public Film(Integer id, Integer yearPublication, Integer mothPublication, String genre, Double rating) {
+    public Film(Integer id, Integer yearPublication, Integer mothPublication, Genre genre, Double rating) {
         this.id = id;
         this.yearPublication = yearPublication;
         this.monthPublication = mothPublication;
@@ -44,11 +44,11 @@ public class Film implements Comparable<Film>{
         this.monthPublication = monthPublication;
     }
 
-    public String getGenre() {
+    public Genre getGenre() {
         return genre;
     }
 
-    public void setGenre(String genre) {
+    public void setGenre(Genre genre) {
         this.genre = genre;
     }
 
@@ -66,7 +66,7 @@ public class Film implements Comparable<Film>{
                 "id=" + id +
                 ", yearPublication=" + yearPublication +
                 ", mothPublication=" + monthPublication +
-                ", genre='" + genre + '\'' +
+                ", genre='" + genre.getName() + '\'' +
                 ", rating=" + rating +
                 '}';
     }

@@ -1,6 +1,7 @@
 package collectionCinema.util;
 
 import collectionCinema.entity.Film;
+import collectionCinema.entity.Genre;
 
 import java.util.*;
 
@@ -33,13 +34,13 @@ public final class CinemaUtil {
         }
         return null;
     }
-    public static List<Film> getAllFilmsOfGenre(String genre,LinkedHashMap<Integer, List<Film>> mapCinema) {
+    public static List<Film> getAllFilmsOfGenre(Genre genre, LinkedHashMap<Integer, List<Film>> mapCinema) {
         List<Film> arrayFilmsByGenre = new ArrayList<>();
         Set<Map.Entry<Integer, List<Film>>> entries = mapCinema.entrySet();
         for (Map.Entry<Integer, List<Film>> entry : entries) {
             List<Film> value = entry.getValue();
             for (Film film : value) {
-                if (film.getGenre().equalsIgnoreCase(genre)) {
+                if (film.getGenre()==genre) {
                     arrayFilmsByGenre.add(film);
                 }
 
