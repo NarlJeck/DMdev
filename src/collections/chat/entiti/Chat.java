@@ -1,4 +1,4 @@
-package collections.chat.util.entiti;
+package collections.chat.entiti;
 
 /**
  * Задание 1

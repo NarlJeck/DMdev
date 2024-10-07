@@ -1,6 +1,6 @@
 package collections.chat.util;
 
-import collections.chat.util.entiti.Chat;
+import collections.chat.entiti.Chat;
 
 import java.util.Comparator;
 import java.util.Iterator;
@@ -26,8 +26,7 @@ public final class ChatUtil {
      * * *
      */
     public static void LengthChat(List<Chat> list) {
-        Iterator<Chat> listIterator = list.listIterator();
-        while (listIterator.hasNext()) {
+        for(Iterator<Chat> listIterator = list.listIterator();listIterator.hasNext();){
             Chat nextValue = listIterator.next();
             if (nextValue.getCountUsers() < countUsers) {
                 listIterator.remove();
@@ -36,8 +35,7 @@ public final class ChatUtil {
     }
 
     public static void showChatList(List<Chat> list) {
-        Iterator<Chat> listIterator = list.listIterator();
-        while (listIterator.hasNext()) {
+        for (Iterator<Chat> listIterator = list.listIterator(); listIterator.hasNext();) {
             Chat nextValue = listIterator.next();
             System.out.println(nextValue);
         }

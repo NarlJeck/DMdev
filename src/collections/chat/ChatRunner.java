@@ -1,7 +1,7 @@
 package collections.chat;
 
+import collections.chat.entiti.Chat;
 import collections.chat.util.ChatUtil;
-import collections.chat.util.entiti.Chat;
 
 import java.util.ArrayList;
 import java.util.List;
