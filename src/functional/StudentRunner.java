@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class StudentRunner {
@@ -105,10 +106,19 @@ public class StudentRunner {
         Map<CurseNumber, CoursePerformance> collect = listCourse.stream()
                 .collect(Collectors.toMap(
                         CoursePerformance::getCurseNumber,
-                        x -> x
+                        Function.identity()
                 ));
-        collect.forEach((k, v) -> System.out.println(k + " " + v));
+//        collect.forEach((k, v) -> System.out.println(k + " " + v));
 
+
+        Map<CurseNumber, Double> collect1 = students
+                .stream()
+                .filter(student -> student.getGrade().size() > 3)
+                .collect(Collectors.groupingBy(Student::getUniversityCurseNumber,
+                        Collectors.flatMapping(student -> student.getGrade()
+                                        .stream(),
+                                Collectors.averagingInt(Integer::intValue))));
+        collect1.forEach((k, v) -> System.out.println(k + " " + v));
 
     }
 }

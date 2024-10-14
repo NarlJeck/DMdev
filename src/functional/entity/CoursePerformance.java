@@ -7,11 +7,11 @@ import java.util.OptionalDouble;
 
 public class CoursePerformance {
     private List<Student> students;
-    private OptionalDouble avgGradeStudents;
+    private Double avgGradeStudents;
     private CurseNumber curseNumber;
 
 
-    public CoursePerformance(List<Student> students, OptionalDouble avgGradeStudents, CurseNumber curseNumber) {
+    public CoursePerformance(List<Student> students, Double avgGradeStudents, CurseNumber curseNumber) {
         this.students = students;
         this.avgGradeStudents = avgGradeStudents;
         this.curseNumber = curseNumber;
@@ -28,11 +28,11 @@ public class CoursePerformance {
         this.students = students;
     }
 
-    public OptionalDouble getAvgGradeStudents() {
+    public Double getAvgGradeStudents() {
         return avgGradeStudents;
     }
 
-    public void setAvgGradeStudents(OptionalDouble avgGradeStudents) {
+    public void setAvgGradeStudents(Double avgGradeStudents) {
         this.avgGradeStudents = avgGradeStudents;
     }
 
@@ -44,17 +44,16 @@ public class CoursePerformance {
         this.curseNumber = curseNumber;
     }
 
-    public OptionalDouble average(List<Student> students, CurseNumber curseNumber) {
-        OptionalDouble average = students.stream()
+    public Double average(List<Student> students, CurseNumber curseNumber) {
+        return students.stream()
                 .filter(student -> student.getUniversityCurseNumber() == curseNumber)
                 .filter(student -> student.getGrade().size() > 3)
                 .map(student -> student.getGrade()
                         .stream()
-                        .mapToInt(Integer::intValue)
-                        .average())
-                .mapToDouble(OptionalDouble::getAsDouble)
-                .average();
-        return average;
+                        .mapToDouble(Integer::doubleValue)
+                        .average().getAsDouble())
+                .mapToDouble(Double::doubleValue)
+                .average().getAsDouble();
     }
 
     @Override
