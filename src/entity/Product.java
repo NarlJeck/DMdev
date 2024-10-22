@@ -2,18 +2,18 @@ package entity;
 
 public class Product {
     private String Id;
-    private Float price;
+    private String price;
     private String name;
     private String Description;
 
-    public Product(String id, Float price, String name, String description) {
+    public Product(String id, String price, String name, String description) {
         Id = id;
         this.price = price;
         this.name = name;
         Description = description;
     }
 
-    public Product(String id, Float price, String name) {
+    public Product(String id, String price, String name) {
         Id = id;
         this.price = price;
         this.name = name;
@@ -31,11 +31,11 @@ public class Product {
         return Id;
     }
 
-    public Float getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(Float price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
@@ -63,4 +63,5 @@ public class Product {
                 ", name='" + name + '\'' +
                 '}';
     }
+
 }
