@@ -4,6 +4,7 @@ import util.CreateLog;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -44,13 +45,26 @@ import java.util.Map;
  * * Желательно реализовать функционал добавления новых жалоб в конец лог-файла.
  */
 public class RegularRunner {
+    private static final File PATH_FIRST_FILE = Path.of("resources", "log.txt").toFile();
+
     public static void main(String[] args) throws IOException {
-        File pathFirstFile = Path.of("resources", "log.txt").toFile();
         Map<Integer, String> mapServiceRequest = CreateLog.createMapServiceRequest(10);
-        List<String> listLineLogFirst = ApplicationProcessor.readFirsFile(pathFirstFile);
-        CreateLog.outputFileServiceRequest(pathFirstFile, mapServiceRequest);
-        CreateLog.addRecordInLogFile(pathFirstFile, "rrr", "ww", 441115555, "Дождь");
-        ApplicationProcessor.processingLogFile(listLineLogFirst);
+
+        //Создаем файл log запросов
+        CreateLog.outputFileServiceRequest(PATH_FIRST_FILE, mapServiceRequest);
+        // добавляем новый запрос в log
+        CreateLog.addRecordInLogFile(PATH_FIRST_FILE, "Jeck", "Narel", 441115555, "Дождь");
+        //Читаем log файл
+        List<String> listLineLogFirst = ApplicationProcessor.readFirsFile(PATH_FIRST_FILE);
+        //Создаем log2 - файл обработки запросов
+
+        //ДОбавляем новую запись в log файл
+        CreateLog.addRecordInLogFile(PATH_FIRST_FILE, "NER", "TRE", 339887744, "ВОДА");
+        //Считываем log файл
+        List<String> listLineLogFirst2 = ApplicationProcessor.readFirsFile(PATH_FIRST_FILE);
+        //Добавляем запись в файл log2
+        ApplicationProcessor.processingLogFile(listLineLogFirst2);
+
 
     }
 }
